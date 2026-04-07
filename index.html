@@ -3,197 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convocação | Cadastro Emergencial 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Chamamento - Cadastro Emergencial Caieiras</title>
     <style>
         :root {
-            --primary: #1a2a6c;
-            --secondary: #b21f1f;
-            --accent: #fdbb2d;
-            --glass: rgba(255, 255, 255, 0.95);
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
-        .main-card {
-            background: var(--glass);
-            width: 90%;
-            max-width: 900px;
-            margin: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .header {
-            background: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .header p {
-            margin-top: 10px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .content {
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
             padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .grid-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        header {
+            border-bottom: 3px solid var(--secondary-color);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .info-box {
+            background: #e1f5fe;
+            padding: 20px;
+            border-left: 5px solid var(--secondary-color);
             margin-bottom: 30px;
         }
 
-        .info-item {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            border-bottom: 4px solid var(--secondary);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        h2 {
+            color: var(--secondary-color);
+            font-size: 20px;
+            margin-top: 25px;
         }
 
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--secondary);
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
             margin-bottom: 10px;
         }
 
-        .info-item h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .requirements-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .requirements-list li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: #27ae60;
-            margin-right: 10px;
-        }
-
-        .btn-wrapper {
+        .btn-container {
             text-align: center;
-            padding: 20px 0;
+            margin-top: 40px;
         }
 
-        .cta-button {
+        .btn {
             display: inline-block;
-            background: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-            color: #000;
-            padding: 20px 40px;
-            border-radius: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
             text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(248, 54, 0, 0.3);
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(248, 54, 0, 0.4);
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
         }
 
-        .footer-note {
-            background: #f8f9fa;
-            padding: 20px;
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
             text-align: center;
-            font-size: 0.85rem;
-            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
 
-        @media (max-width: 600px) {
-            .content { padding: 20px; }
-            .header h1 { font-size: 1.4rem; }
+        .important {
+            color: #c0392b;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="main-card">
-    <div class="header">
-        <i class="fas fa-chalkboard-teacher fa-3x" style="margin-bottom: 15px; color: var(--accent);"></i>
-        <h1>Chamamento Emergencial 2026</h1>
-        <p>Unidade Regional de Ensino – Região de Caieiras</p>
+<div class="container">
+    <header>
+        <h1>Abertura de Cadastro Emergencial 2026</h1>
+        <p><strong>Matemática, Química e Física</strong> - Região de Caieiras</p>
+    </header>
+
+    <section class="info-box">
+        <p><strong>Data:</strong> 10/04/2026 (Sexta-feira)</p>
+        <p><strong>Horário:</strong> 09h30</p>
+        <p><strong>Local:</strong> Unidade Regional de Ensino – Região de Caieiras<br>
+        <small>Av. dos Estudantes, 360 – Centro – Caieiras – SP</small></p>
+    </section>
+
+    <section>
+        <p>A Comissão de Atribuição de Aulas convoca os docentes inscritos no <strong>Banco de Talentos</strong> para análise documental e verificação de pré-requisitos para atuação em escolas parciais.</p>
+        
+        <h2>Pré-requisitos</h2>
+        <ul>
+            <li>Habilitação ou autorização para lecionar no componente curricular (Indicação CEE nº 213/2021).</li>
+            <li>Idade mínima de 18 anos completos.</li>
+            <li>Regularidade com a Justiça Eleitoral e obrigações militares (sexo masculino).</li>
+            <li>Ausência de impedimentos legais para contratação pública.</li>
+        </ul>
+
+        <h2>Documentação Necessária (Original e Cópia)</h2>
+        <ul>
+            <li>Diploma e Histórico Escolar do Ensino Superior.
+                <br><small><em>*Estudantes de licenciatura: Comprovante de matrícula e histórico com carga horária detalhada.</em></small>
+            </li>
+            <li>RG e CPF.</li>
+            <li>Título de Eleitor.</li>
+            <li>Comprovante de Endereço.</li>
+            <li>PIS.</li>
+        </ul>
+    </section>
+
+    <div class="btn-container">
+        <a href="https://admin.cms.sp.gov.br/dx/api/dam/v1/collections/6fd5b57c-04c9-4fac-86e5-6774fbe5a609/items/a54cc29b-c0b2-4379-83a1-2b4da23d6342/renditions/65f1c198-492c-4ea9-ac19-a410d5c8fd28?binary=true" class="btn" target="_blank">
+            Acesse aqui edital completo e Candidatos convocados
+        </a>
     </div>
 
-    <div class="content">
-        <div class="grid-info">
-            <div class="info-item">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>Quando?</h3>
-                <p><strong>10/04/2026</strong> (Sexta-feira)<br>Às 09h30</p>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Onde?</h3>
-                <p>Av. dos Estudantes, 360<br>Centro – Caieiras – SP</p>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 30px;">
-            <h3 style="color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px;">
-                <i class="fas fa-file-invoice"></i> Pré-requisitos e Documentos
-            </h3>
-            <ul class="requirements-list">
-                <li>Habilitação ou autorização para lecionar (Matemática, Química e Física).</li>
-                <li>Documentação completa: RG, CPF, Título e PIS.</li>
-                <li>Diploma de Ensino Superior ou Histórico Escolar (para estudantes).</li>
-                <li>Comprovante de residência atualizado.</li>
-                <li>Estar em dia com obrigações eleitorais e militares.</li>
-            </ul>
-        </div>
-
-        <div class="btn-wrapper">
-            <a href="https://admin.cms.sp.gov.br/dx/api/dam/v1/collections/6fd5b57c-04c9-4fac-86e5-6774fbe5a609/items/a54cc29b-c0b2-4379-83a1-2b4da23d6342/renditions/65f1c198-492c-4ea9-ac19-a410d5c8fd28?binary=true" class="cta-button" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Acesse aqui edital completo e Candidatos convocados
-            </a>
-        </div>
-    </div>
-
-    <div class="footer-note">
-        <strong>Comissão de Atribuição de Aulas</strong><br>
-        Chamamento fundamentado no EDITAL 001/2026 – BANCO DE TALENTOS
-    </div>
+    <footer>
+        Comissão de Atribuição de Aulas<br>
+        Unidade Regional de Ensino – Região de Caieiras
+    </footer>
 </div>
 
 </body>
