@@ -4,101 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamamento - Cadastro Emergencial Caieiras</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e67e22;
-            --bg-color: #f4f7f6;
+            --primary-color: #1f2d3d;
+            --secondary-color: #2c7be5;
+            --accent-color: #f39c12;
+            --bg-gradient: linear-gradient(135deg, #eef2f7, #f8fbff);
             --text-color: #333;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
             color: var(--text-color);
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 50px auto;
             background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
-            border-bottom: 3px solid var(--secondary-color);
+            border-left: 6px solid var(--secondary-color);
+            padding-left: 15px;
             margin-bottom: 30px;
-            padding-bottom: 10px;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 24px;
-            text-transform: uppercase;
-            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 5px;
+            color: #666;
+            font-weight: 500;
         }
 
         .info-box {
-            background: #e1f5fe;
-            padding: 20px;
-            border-left: 5px solid var(--secondary-color);
+            background: #f0f7ff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #d6e6ff;
             margin-bottom: 30px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item i {
+            color: var(--secondary-color);
+            font-size: 18px;
+            width: 22px;
         }
 
         h2 {
             color: var(--secondary-color);
-            font-size: 20px;
             margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         ul {
             padding-left: 20px;
+            margin-top: 10px;
         }
 
         li {
             margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        li::marker {
+            color: var(--secondary-color);
         }
 
         .btn-container {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 45px;
         }
 
         .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-color), #e67e22);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             border-radius: 50px;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            background-color: #d35400;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         footer {
             margin-top: 50px;
             font-size: 14px;
-            color: #777;
+            color: #888;
             text-align: center;
             border-top: 1px solid #eee;
             padding-top: 20px;
         }
 
-        .important {
-            color: #c0392b;
-            font-weight: bold;
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -111,16 +165,25 @@
     </header>
 
     <section class="info-box">
-        <p><strong>Data:</strong> 10/04/2026 (Sexta-feira)</p>
-        <p><strong>Horário:</strong> 09h30</p>
-        <p><strong>Local:</strong> Unidade Regional de Ensino – Região de Caieiras<br>
-        <small>Av. dos Estudantes, 360 – Centro – Caieiras – SP</small></p>
+        <div class="info-item">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p><strong>Data:</strong> 10/04/2026 (Sexta-feira)</p>
+        </div>
+        <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <p><strong>Horário:</strong> 09h30</p>
+        </div>
+        <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <p><strong>Local:</strong> Unidade Regional de Ensino – Região de Caieiras<br>
+            <small>Av. dos Estudantes, 360 – Centro – Caieiras – SP</small></p>
+        </div>
     </section>
 
     <section>
-        <p>A Comissão de Atribuição de Aulas convoca os docentes inscritos no <strong>Banco de Talentos</strong> para análise documental e verificação de pré-requisitos para atuação em escolas parciais.</p>
+        <p><i class="fa-solid fa-bullhorn"></i> A Comissão de Atribuição de Aulas convoca os docentes inscritos no <strong>Banco de Talentos</strong> para análise documental e verificação de pré-requisitos para atuação em escolas parciais.</p>
         
-        <h2>Pré-requisitos</h2>
+        <h2><i class="fa-solid fa-check-circle"></i> Pré-requisitos</h2>
         <ul>
             <li>Habilitação ou autorização para lecionar no componente curricular (Indicação CEE nº 213/2021).</li>
             <li>Idade mínima de 18 anos completos.</li>
@@ -128,7 +191,7 @@
             <li>Ausência de impedimentos legais para contratação pública.</li>
         </ul>
 
-        <h2>Documentação Necessária (Original e Cópia)</h2>
+        <h2><i class="fa-solid fa-file-lines"></i> Documentação Necessária (Original e Cópia)</h2>
         <ul>
             <li>Diploma e Histórico Escolar do Ensino Superior.
                 <br><small><em>*Estudantes de licenciatura: Comprovante de matrícula e histórico com carga horária detalhada.</em></small>
@@ -142,7 +205,8 @@
 
     <div class="btn-container">
         <a href="https://admin.cms.sp.gov.br/dx/api/dam/v1/collections/6fd5b57c-04c9-4fac-86e5-6774fbe5a609/items/a54cc29b-c0b2-4379-83a1-2b4da23d6342/renditions/65f1c198-492c-4ea9-ac19-a410d5c8fd28?binary=true" class="btn" target="_blank">
-            Acesse aqui edital completo e Candidatos convocados
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Acesse edital completo
         </a>
     </div>
 
